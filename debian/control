@@ -1,0 +1,11 @@
+Source: hpcfs
+Section: utils
+Priority: optional
+Maintainer: Pierre-Yves Kerembellec <pyke@dailymotion.com>
+Build-Depends: debhelper (>= 5), libfuse-dev, libpcre3-dev
+Standards-Version: 3.7.2
+
+Package: hpcfs
+Architecture: any
+Depends: libfuse2, libpcre3, libc6
+Description: HPCFS FUSE module

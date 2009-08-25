@@ -1,0 +1,14 @@
+# Sample configuration file for HPCFS
+
+HostMap           storage "10.4.14.$[1-24] 10.195.15.$[1-12] 10.4.16.$[1-12] 10.195.17.$[1-11] 10.4.18.$[1-11]"
+Rewrite           ^/(\d{3}/\d{3}/\d+:[a-z0-9_]+)(?::\d+)?(\.[a-z0-9]+)$ http://${storage}/video/$1$2
+Rewrite           ^/\d+/((?:[a-z0-9]+/[a-z0-9_]+)|source)/(\d+)(?:-\d+)?(\.[a-z0-9]+)$ http://${storage}/dailymotion/$1/$2$3
+
+ConnectTimeout    5
+MapTimeout        5
+ReceiveTimeout    30
+MaxDepth          8
+
+CacheRoot         /data/cache/disk_1
+
+Log               /data/proxy-cleaner/logs/proxy-%j-%H%M.log

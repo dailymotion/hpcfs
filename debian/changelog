@@ -1,0 +1,5 @@
+hpcfs (1.0.0) stable; urgency=low
+
+  * Debian package
+
+ -- Pierre-Yves Kerembellec <pyke@dailymotion.com>  Tue, 11 Aug 2009 10:22:27 +0100
