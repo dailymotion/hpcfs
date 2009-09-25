@@ -215,7 +215,7 @@ static void hpcfs_substitute(char *target, u_int32_t size, const char *source, i
         {
             if (matches[index * 2] >= 0 && matches[(index * 2) + 1] >= 0)
             {
-                if (strlen(target) - 2 + (matches[index * 2] - matches[(index * 2) + 1]) < size)
+                if (strlen(target) - 2 + (matches[(index * 2) + 1] - matches[index * 2]) < size)
                 {
                     memmove(token + matches[(index * 2) + 1] - matches[index * 2], token + length, strlen(token + length) + 1);
                     memcpy(token, source + matches[index * 2], matches[(index * 2) + 1] - matches[index * 2]);

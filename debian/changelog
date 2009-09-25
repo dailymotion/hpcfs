@@ -1,3 +1,9 @@
+hpcfs (1.0.1) stable; urgency=low
+
+  * Fix typo in hpcfs_substitute, leading to substitution random behaviour
+
+ -- Pierre-Yves Kerembellec <pyke@dailymotion.com>  Fri, 25 Sep 2009 11:43:12 +0100
+
 hpcfs (1.0.0) stable; urgency=low
 
   * Debian package
