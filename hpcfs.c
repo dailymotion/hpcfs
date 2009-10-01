@@ -1055,6 +1055,7 @@ static struct fuse_operations hpcfs_vtable =
 int main(int argc, char **argv)
 {
     struct fuse_args args = FUSE_ARGS_INIT(0, NULL);
+    char             *configuration = NULL;
     int              status, help = 0, version = 0;
 
     while (*argv)
@@ -1070,16 +1071,21 @@ int main(int argc, char **argv)
         if (! strcasecmp(*argv, "-o") && *(argv + 1) && ! strncasecmp(*(argv + 1), "hpcfsconfig=", 12))
         {
             argv ++;
-            if ((status = hpcfs_parse_configuration(*argv + 12)) && ! (help || version))
-            {
-                return status;
-            }
+            configuration = strdup(*argv + 12);
         }
         else
         {
             fuse_opt_add_arg(&args, *argv);
         }
         argv ++;
+    }
+    if (! configuration)
+    {
+        configuration = strdup("/etc/hpcfs.conf");
+    }
+    if ((status = hpcfs_parse_configuration(configuration)) && ! (help || version))
+    {
+        return status;
     }
     if (! hpcfs_cache_root && ! (help || version))
     {
