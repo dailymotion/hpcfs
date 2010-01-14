@@ -24,7 +24,7 @@
 // Defines and directives
 #pragma pack(1)
 
-#define MODULE_VERSION       "1.0.0"
+#define MODULE_VERSION       "1.0.2"
 
 #define MAXIMUM_REWRITES     (32)
 #define MAXIMUM_HOSTMAPS     (32)
@@ -173,7 +173,7 @@ static int hpcfs_directory(const char *path)
     {
         return 0;
     }
-    memset(prefix, sizeof(prefix), 0);
+    memset(prefix, 0, sizeof(prefix));
     while (1)
     {
         strncpy(prefix, path, sizeof(prefix) - 1);

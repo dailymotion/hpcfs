@@ -1,3 +1,9 @@
+hpcfs (1.0.2) stable; urgency=low
+
+  * Fix memset typo in hpcfs_directory (thx external user!)
+
+ -- Pierre-Yves Kerembellec <pyke@dailymotion.com>  Thu, 14 Jan 2009 11:48:25 +0100
+
 hpcfs (1.0.1) stable; urgency=low
 
   * Fix typo in hpcfs_substitute, leading to substitution random behaviour
